@@ -17,8 +17,8 @@
     <nav class="nav">
       <img src="img/logo.png" alt="Bank logo" class="nav__logo" id="logo" />
       <ul class="nav__links">
-        <li class="nav__item" onclick="alert('Hello_1'); console.log('Hello_2');>
-          <a class=" nav__link" href="#section--1">Features</a>
+        <li class="nav__item">
+          <a class="nav__link" href="#section--1">Features</a>
         </li>
         <li class="nav__item">
           <a class="nav__link" href="#section--2">Operations</a>
@@ -375,11 +375,12 @@
        navbarItem3.removeEventListener("click", randomColor); */
     ////////////////////////////////////////////////////////
     document.querySelectorAll(".nav__link").forEach(
-      function (elements) {
-        elements.addEventListener("click", function () {
+      function (elements){
+        elements.addEventListener("click", function(element){
+          element.preventDefault();
           const sectionId = this.getAttribute("href");
           document.querySelector(sectionId).scrollIntoView({
-            behavior: "smooth"
+            behavior : "smooth"
           });
         });
       });
