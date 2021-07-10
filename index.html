@@ -17,8 +17,8 @@
     <nav class="nav">
       <img src="img/logo.png" alt="Bank logo" class="nav__logo" id="logo" />
       <ul class="nav__links">
-        <li class="nav__item">
-          <a class="nav__link" href="#section--1">Features</a>
+        <li class="nav__item" onclick="alert('Hello_1'); console.log('Hello_2');>
+          <a class=" nav__link" href="#section--1">Features</a>
         </li>
         <li class="nav__item">
           <a class="nav__link" href="#section--2">Operations</a>
@@ -320,19 +320,71 @@
     const navbarItem1 = document.getElementsByClassName("nav__item")[0];
     const navbarItem2 = document.getElementsByClassName("nav__item")[1];
     const navbarItem3 = document.getElementsByClassName("nav__item")[2];
-    console.log(navbarItem1);
-    console.log(navbarItem2);
-    console.log(navbarItem3);
+    /*    console.log(navbarItem1);
+       console.log(navbarItem2);
+       console.log(navbarItem3); */
     ////////////////////////////////////////////////////////
     const h1 = document.querySelector("h1");
-    const highlightSpan = h1.querySelectorAll(".highlight")
+    /* const highlightSpan = h1.querySelectorAll(".highlight")
     console.log(h1);
     h1.firstElementChild.style.color = "red";
     h1.lastElementChild.style.color = "blue";
-    console.log(highlightSpan);
+    console.log(highlightSpan); */
     ////////////////////////////////////////////////////////
-    h1.closest(".header").style.backgroundColor = "yellow";
-////////////////////////////////////////////////////////
+    /*  h1.closest(".header").style.backgroundColor = "yellow"; */
+    ////////////////////////////////////////////////////////
+    /*     window.onload = () => {
+          alert("Welcome_1")
+        }
+        window.onload = function () {
+          alert("Welcome_2")
+        }
+        window.addEventListener("load", () => {
+          alert("Welcome_3")
+        }); */
+    ////////////////////////////////////////////////////////
+    /*   navbarItem1.onclick = function () { alert("Hello_1")}
+      navbarItem1.addEventListener("click", () => alert("Hello_2"))
+  
+      function sayHello() {
+        alert("Hello_3")
+      }
+   */
+    ////////////////////////////////////////////////////////
+    /*   navbarItem2.addEventListener("mouseover", ()=> alert("Over Me!")); */
+    /*    navbarItem2.addEventListener("mouseover", () => {
+         navbarItem2.textContent = "Over Me!"
+       });
+       navbarItem2.addEventListener("mouseout", () => {
+         navbarItem2.textContent = "Operations!"}
+       ); */
+    ////////////////////////////////////////////////////////
+    /*  const randomNumber = () => {
+        return Math.floor(Math.random() * 255);
+       }
+       const randomColor = () => {
+        return `rgb(${randomNumber()}, ${randomNumber()}, ${randomNumber()})`;
+       }
+       const changeColor = () => {
+         navbarItem3,style.borderRadius = "10px";
+         navbarItem3.style.backgroundColor = randomColor();
+         console.log(randomColor);
+       }
+       navbarItem3.addEventListener("click", changeColor);
+ 
+       navbarItem3.removeEventListener("click", randomColor); */
+    ////////////////////////////////////////////////////////
+    document.querySelectorAll(".nav__link").forEach(
+      function (elements) {
+        elements.addEventListener("click", function () {
+          const sectionId = this.getAttribute("href");
+          document.querySelector(sectionId).scrollIntoView({
+            behavior: "smooth"
+          });
+        });
+      });
+    console.log(document.querySelectorAll(".nav__link"));
+
   </script>
 
 </body>
